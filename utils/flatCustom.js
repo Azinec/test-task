@@ -1,5 +1,4 @@
 function flatCustom(arr = this) {
-    // console.log(arr);
     return arr.reduce((resultArray, itemArray) => {
         if(Array.isArray(itemArray)) {
             return resultArray.concat(flatCustom(itemArray));
