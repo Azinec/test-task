@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<form method="POST" action="/api/monthly-rate-calculate">
+    <label>Amount: </label>
+    <input type="number" name="mainAmount" placeholder="Enter needed amount" /><br />
+    <label>Down payment: </label>
+    <input type="number" name="downPayment" placeholder="Enter down payment" required /><br />
+    <label>Number of months: </label>
+    <input type="number" name="numMonths" placeholder="Enter number of months" required /><br />
+    <label>Interested rate: </label>
+    <input type="number" name="rate" placeholder="Enter interested rate" required /><br />
+    <label>Final payment: </label>
+    <input type="number" name="finalPayment" placeholder="Enter final payment" /><br />
+    <input type="submit" />
+</form>
+</body>
+</html>

@@ -7,6 +7,6 @@ const router = express.Router();
 
 const MonthlyRateCalculate = require('../controllers/monthlyRateCalculate');
 
-router.get('/', MonthlyRateCalculate.calculateMonthlyRate);
+router.post('/', MonthlyRateCalculate.calculateMonthlyRate);
 
 module.exports = router;

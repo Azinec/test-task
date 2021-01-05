@@ -1,19 +1,23 @@
-const { REQUIRED_PARAMS, MONTH_LIMITS } = require('../constants/errors');
-
 /**
  * Services
  */
+const { monthlyPayment } = require('../services/monthlyRateCalculate');
 
+/**
+ * calculateMonthlyRate - simple controller method - all logic in monthlyRateCalculate service
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ */
 const calculateMonthlyRate = async (req, res) => {
-    const { downPayment, numMonths, rate, finalPayment } = req.query;
-    console.log('downPayment', downPayment);
-    console.log('numMonths', numMonths);
-    console.log('rate', rate);
-    console.log('finalPayment', finalPayment);
-    if (!downPayment || !numMonths || !rate) return res.status(400).send({ message: REQUIRED_PARAMS });
-    if (numMonths < 1 || numMonths > 12) return res.status(400).send({ message: MONTH_LIMITS });
+    const { mainAmount, downPayment, numMonths, rate, finalPayment = 0 } = req.body;
 
-    return res.send({ message: 'Ok', downPayment, numMonths, rate });
+    const resultCalculation = monthlyPayment(mainAmount, downPayment, numMonths, rate, finalPayment);
+    if(resultCalculation.errors.length > 0) {
+        return res.status(400).send({message: 'Failed', errors: resultCalculation.errors});
+    }
+    return res.send({ message: 'Ok', result: resultCalculation.result });
 };
 
 module.exports = {
