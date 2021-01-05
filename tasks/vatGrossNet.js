@@ -50,3 +50,9 @@ module.exports = {
     ERROR_MESSAGES,
     grossToNetWithVat
 }
+
+// USAGE:
+
+// UNCOMMENTED NEXT 2 LINES FOR TEST IN TERMINAL
+// console.log(grossToNetWithVat(150, 20));
+// console.log(grossToNetWithVat(200, 5));

@@ -14,12 +14,17 @@ function flatCustom(arr = this) {
     }, []);
 }
 
-Array.prototype.flatCustom = flatCustom;
+module.exports = {
+    flatCustom
+}
 
-const arr1 = [[2], 3, {}, [1, 2]] // [2, 3, 1, 2]
-const arr2 = [2, 3, [[1, {a: "text"}], [[2]]], 5] // [2, 3, 1, "text", 2, 5]
-const arr3 = [5, {a: 1}, [ 1,[ 3, {}, {c: "a", d: [2, 2]} ] ,[[ 6 ]]]] // [5, 1, 1, 3, "a", 2, 2, 6]
+// USAGE:
 
-console.log(arr1.flatCustom());
-console.log(arr2.flatCustom());
-console.log(arr3.flatCustom());
+// UNCOMMENTED NEXT 7 LINES FOR TEST IN TERMINAL
+// Array.prototype.flatCustom = flatCustom;
+// const arr1 = [[2], 3, {}, [1, 2]] // [2, 3, 1, 2]
+// const arr2 = [2, 3, [[1, {a: "text"}], [[2]]], 5] // [2, 3, 1, "text", 2, 5]
+// const arr3 = [5, {a: 1}, [ 1,[ 3, {}, {c: "a", d: [2, 2]} ] ,[[ 6 ]]]] // [5, 1, 1, 3, "a", 2, 2, 6]
+// console.log(arr1.flatCustom());
+// console.log(arr2.flatCustom());
+// console.log(arr3.flatCustom());
