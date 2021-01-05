@@ -1,7 +1,7 @@
 /**
  * Constants
  */
-const { MONTH_LIMITS, RATE_LIMITS, FINAL_PAYMENT_LIMITS, MAIN_AMOUNT_LIMITS, DOWN_PAYMENT_LIMITS, MAIN_AMOUNT_MORE_DOWN_PAYMENT_LIMITS } = require('../constants/errors');
+const { MAIN_AMOUNT_LIMITS, MAIN_AMOUNT_MORE_DOWN_PAYMENT_LIMITS } = require('../constants/errors');
 
 /**
  * Services
@@ -59,5 +59,4 @@ describe('Calculation monthly payment tests', () => {
                 ]
             });
     });
-
 });
