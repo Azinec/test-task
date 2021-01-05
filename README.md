@@ -15,11 +15,11 @@ In browser reach url - http://localhost:3000/
 - check result
 
 Params:
-Amount (Main amount) - initial amount for calculation
-Down payment - amount we subtract from Main amount before calculation
-Number of months - number of months for calculation monthly rate
-Interested rate - rate for the year (should be transferred for monthly use)
-Final payment (optional) - amount that should stay after all monthly payments
+- Amount (Main amount) - initial amount for calculation
+- Down payment - amount we subtract from Main amount before calculation
+- Number of months - number of months for calculation monthly rate
+- Interested rate - rate for the year (should be transferred for monthly use)
+- Final payment (optional) - amount that should stay after all monthly payments
 
 Notes:
 - all cases you find in tests "tests/calculation.unit.test.js"
